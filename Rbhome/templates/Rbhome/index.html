@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>RentBackyard</title>
+
+<link rel="stylesheet" href="{% static 'Rbhome/css/bootstrap.min.css' %}" type="text/css"/>
+<link rel="stylesheet" href="{% static 'Rbhome/css/jquery.bxslider.css' %}" type="text/css"/>
+<link rel="stylesheet" href="{% static 'Rbhome/css/style.css' %}" type="text/css"/>
+
+<script type="text/javascript" src="{% static 'Rbhome/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'Rbhome/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'Rbhome/js/jquery.bxslider.js' %}"></script>
+
+</head>
+
+<body>
+    	<section class="contant">
+        	<div class="container-fluid">
+            	<div class="row">
+                	<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 pd_right">
+                        <div class="logo">
+                            <a href="#"><img src="{% static 'Rbhome/images/logo.svg' %}" alt="" /></a>
+                        </div>
+                    </div>
+            		<div class="col-lg-10 col-md-10 col-sm-9 col-xs-8">
+                        <div class="top_buttons">
+                            <ul>
+                                <li class="mb_none">
+                                    <img src="{% static 'Rbhome/images/mail_icon.png' %}" alt="" />
+                                    <span>64bitconsultants@gmail.com</span>
+                                </li>
+                                <li class="mb_none">
+                                    <img src="{% static 'Rbhome/images/call_icon.png' %}" alt="" />
+                                    <span style="padding-top:7px;">+1 (732) 397-2768</span>
+                                </li>
+                                <li>
+                                    <a href="#">DONATE</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+            	<div class="row">
+                	<div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-12 col-xs-5 mb_menu pd_left">
+                    	<div class="menu">
+                        	<nav class="navbar navbar-default">
+                              <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                  </button>
+                                  <a class="navbar-brand" href="#">DONATE</a>
+                                </div>
+                            
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                  <ul class="nav navbar-nav">
+                                      <li class="active"><a href="">HOME</a></li>
+                                      <li><a href="#">ABOUT US</a></li>
+                                      <li><a href="#">SERVICES</a></li>
+                                      <li><a href="#">PRIVACY POLICY</a></li>
+                                      <li><a href="#">CAREER</a></li>
+                                      <li><a href="#">CONTACT US </a></li>
+                                      {% if user.is_authenticated %}
+                                      <li><a href="{% url 'logout' %}">LOGOUT </a></li>
+                                      <li><a href="{% url 'proposal' %}">PROPOSAL </a></li>
+                                      {% else %}
+                                      <li><a href="{% url 'login' %}">LOGIN </a></li>
+                                      <li><a href="{% url 'signup' %}">SIGNUP </a></li>
+                                      {% endif %}
+
+                                  </ul>
+                                </div><!-- /.navbar-collapse -->
+                              </div><!-- /.container-fluid -->
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid mb_menu2">
+            	<div class="row">
+                	<div class="col-xs-12">
+                    	<div class="menu2">
+                             <ul>
+                               <li><a href="#">TOP</a></li>
+                               <li><a href="#">NEW</a></li>
+                               <li><a href="#">TRENDING</a></li>
+                               <li><a href="#">VALUE FOR MONEY </a></li>
+                               <li><a href="#">OFFERS</a></li>
+                              </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+            	<div class="row">
+                	<div class="col-lg-2 col-md-2 col-sm-3 pd_right costam_width">
+                    	<div class="filter_data">
+                        	<h6>FILTER</h6>
+                            <ul>
+                            	<li><a href="#">STATE</a></li>
+                                <li><a href="#">CITY</a></li>
+                                <li><a href="#">ZIP</a></li>
+                                <li><a href="#">SIZE</a></li>
+                                <li><a href="#">RENT PER HOUR</a></li>
+                                <li><a href="#">MAX CAPACITY</a></li>
+                                <li><a href="#">OTHER</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-sm-9 pd_left costam_width_right">
+                    	<div class="filter_contant">
+                        	<div class="row mb_mn">
+                            	<div class="col-md-8 col-sm-9">
+                                	<div class="menu2">
+                                    	<ul>
+                                        	<li><a href="#">TOP RATED</a></li>
+                                            <li><a href="#">NEWEST</a></li>
+                                            <li><a href="#">TRENDING</a></li>
+                                            <li><a href="#">VALUE FOR MONEY </a></li>
+                                            <li><a href="#">SPECIAL OFFERS</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-3">
+                                	<div class="search_box">
+                                    	<div class="input-group">
+                                          <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button"><img src="{% static 'Rbhome/images/search_icon.png' %}" alt="" /></button>
+                                          </span>
+                                          <input type="text" class="form-control" placeholder="Search...">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin:0;">
+
+                            {% for backyard in Backyards %}
+                                <div class="col-md-3 col-sm-6 col-xs-12">
+                                    <div class="block_info">
+                                    <a href="#" data-toggle="modal" data-target="#myModal">
+                                    	<div class="block_data">
+                                            <img src="{{backyard.image_url1}}" alt="" />
+                                            <div class="hover_data">
+                                                <div class="box_text">
+                                                    <h1>{{backyard.city}}, {{backyard.state}}</h1>
+                                                </div>
+
+                                                <div class="left_blok">
+                                                	<ul>
+                                                    	<li class="blue">
+                                                        	<h5>OTHER</h5>
+                                                            <span>SP KR</span>
+                                                        </li>
+                                                        <li class="green">
+                                                        	<h5>CAPACITY</h5>
+                                                            <span>{{backyard.capacity}}</span>
+                                                        </li>
+                                                        <li class="orange">
+                                                        	<h5>RENT/HR</h5>
+                                                            <span>{{backyard.rent}}</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="bottom_block left_blok">
+                                                	<ul>
+                                                    	<li class="blue">
+                                                        	<h5>SIZE</h5>
+                                                            <span>{{backyard.size}}</span>
+                                                        </li>
+                                                        <li class="green">
+                                                        	<h5>ZIP</h5>
+                                                            <span>{{backyard.zip}}</span>
+                                                        </li>
+                                                        <li class="orange">
+                                                        	<h5>CITY</h5>
+                                                            <span style="height: 39px; padding: 6px 0;">{{backyard.city}}</span>
+                                                        </li>
+                                                        <li class="blue">
+                                                        	<h5>STATE</h5>
+                                                            <span>{{backyard.state}}</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+
+                                    	</div>
+
+                                        <div class="mb_block">
+                                            	<ul>
+                                                    	<li>
+                                                        	<h5>STATE</h5>
+                                                            <span>{{backyard.state}}</span>
+                                                        </li>
+                                                        <li>
+                                                        	<h5>CITY</h5>
+                                                            <span>{{backyard.city}}</span>
+                                                        </li>
+                                                        <li>
+                                                        	<h5>ZIP</h5>
+                                                            <span>{{backyard.zip}}</span>
+                                                        </li>
+                                                        <li>
+                                                        	<h5>SIZE</h5>
+                                                            <span>{{backyard.size}}</span>
+                                                        </li>
+                                                        <li>
+                                                        	<h5>RENT/HR</h5>
+                                                            <span>{{backyard.rent}}</span>
+                                                        </li>
+                                                        <li>
+                                                        	<h5>CAPACITY</h5>
+                                                            <span>{{backyard.capacity}}</span>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                    </a>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                </div>
+
+
+</div>
+                </div>
+
+
+
+
+        </section>
+        <div class="filter_data mb_data">
+        <div class="filter_btn">
+       	<a href="#"><img src="{% static 'Rbhome/images/arrow.png' %}" alt="" /></a>
+       </div>
+             <h6>FILTER</h6>
+                    <ul>
+                      <li>
+                      	<a href="#">STATE</a>
+                      	<input type="text" class="form-control"  placeholder="">
+                      </li>
+                      <li><a href="#">CITY</a><input type="text" class="form-control"  placeholder=""></li>
+                      <li><a href="#">ZIP</a><input type="text" class="form-control"  placeholder=""></li>
+                      <li><a href="#">SIZE</a><input type="text" class="form-control"  placeholder=""></li>
+                      <li><a href="#">RENT PER HOUR</a><input type="text" class="form-control"  placeholder=""></li>
+                      <li><a href="#">MAX CAPACITY</a><input type="text" class="form-control"  placeholder=""></li>
+                      <li><a href="#">OTHER</a><input type="text" class="form-control"  placeholder=""></li>
+                     </ul>
+       </div>
+       
+</body>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{% static 'Rbhome/images/close.png' %}" alt="" /></span></button>
+        <h4 class="modal-title" id="myModalLabel">John Cena | <span>201, Las Vegas, Nevada</span></h4>
+      </div>
+      <div class="modal-body">
+       		<div class="slider">
+            	<ul class="bxslider">
+                  <li><img src="{% static 'Rbhome/images/slider1.jpg' %}" /></li>
+                  <li><img src="{% static 'Rbhome/images/slider1.jpg' %}" /></li>
+                  <li><img src="{% static 'Rbhome/images/slider1.jpg' %}" /></li>
+                  <li><img src="{% static 'Rbhome/images/slider1.jpg' %}" /></li>
+                </ul>
+                
+            </div>
+      </div>
+      <div class="modal-footer">
+       	<div class="pro_info">
+        	<ul>
+            	<li>
+                	<span>State</span>
+                    <span>:Nevada</span>
+                </li>
+                <li>
+                	<span>Swimming Pool</span>
+                    <span>:No</span>
+                </li>
+                <li>
+                	<span>City</span>
+                    <span>:Las Vegas</span>
+                </li>
+                <li>
+                	<span>Kiddie Rides</span>
+                    <span>:Yes</span>
+                </li>
+                <li>
+                	<span>Zip</span>
+                    <span>:990022</span>
+                </li>
+                <li>
+                	<span>Canopy</span>
+                    <span>:Yes</span>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    $('.bxslider').bxSlider({
+		adaptiveHeight: true,
+		 mode: 'fade'
+	});
+	$( ".filter_btn" ).click(function() {
+		$(".filter_data").toggleClass( "comeout" );
+	});
+	
+	$( document ).ready(function() {
+     heighdidcal();
+	
+});
+function heighdidcal(){
+	var costam_width=$( ".costam_width" ).height();
+	 var costam_width_right=$( ".costam_width_right" ).height();
+	 if($( window ).width()>991){
+	 if(costam_width<costam_width_right){
+		 $( ".filter_data" ).css('height',costam_width_right);
+	 }
+	 if(costam_width>costam_width_right){
+		 $( ".costam_width_right" ).css('height',costam_width);
+	 }
+	 }
+}
+</script>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>RentBackyard</title>
+
+<link rel="stylesheet" href="{% static 'Rbhome/css/bootstrap.min.css' %}" type="text/css"/>
+<link rel="stylesheet" href="{% static 'Rbhome/css/jquery.bxslider.css' %}" type="text/css"/>
+<link rel="stylesheet" href="{% static 'Rbhome/css/style.css' %}" type="text/css"/>
+
+<script type="text/javascript" src="{% static 'Rbhome/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'Rbhome/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'Rbhome/js/jquery.bxslider.js' %}"></script>
+
+</head>
+
+<body>
+    	<section class="contant">
+        	<div class="container-fluid">
+            	<div class="row">
+                	<div class="col-lg-2 col-md-2 col-sm-3 col-xs-4 pd_right">
+                        <div class="logo">
+                            <a href="#"><img src="{% static 'Rbhome/images/logo.svg' %}" alt="" /></a>
+                        </div>
+                    </div>
+            		<div class="col-lg-10 col-md-10 col-sm-9 col-xs-8">
+                        <div class="top_buttons">
+                            <ul>
+                                <li class="mb_none">
+                                    <img src="{% static 'Rbhome/images/mail_icon.png' %}" alt="" />
+                                    <span>64bitconsultants@gmail.com</span>
+                                </li>
+                                <li class="mb_none">
+                                    <img src="{% static 'Rbhome/images/call_icon.png' %}" alt="" />
+                                    <span style="padding-top:7px;">+1 (732) 397-2768</span>
+                                </li>
+                                <li>
+                                    <a href="#">DONATE</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+            	<div class="row">
+                	<div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-2 col-sm-12 col-xs-5 mb_menu pd_left">
+                    	<div class="menu">
+                        	<nav class="navbar navbar-default">
+                              <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                  </button>
+                                  <a class="navbar-brand" href="#">DONATE</a>
+                                </div>
+                            
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                  <ul class="nav navbar-nav">
+                                      <li><a href="{% url 'index' %}">HOME</a></li>
+                                      <li><a href="#">ABOUT US</a></li>
+                                      <li><a href="#">SERVICES</a></li>
+                                      <li><a href="#">PRIVACY POLICY</a></li>
+                                      <li><a href="#">CAREER</a></li>
+                                      <li><a href="#">CONTACT US </a></li>
+                                      <li><a href="{% url 'logout' %}">LOGOUT </a></li>
+                                      <li class="active"><a href="{% url 'proposal' %}">PROPOSAL </a></li>
+
+                                  </ul>
+                                </div><!-- /.navbar-collapse -->
+                              </div><!-- /.container-fluid -->
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <center>
+                        <form id="proposalform" action="{% url 'proposal' %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{BackyardForm.as_p}}
+                            <input type="file" name="Backyard1"/>
+                            <input type="file" name="Backyard2"/>
+                            <input type="file" name="Backyard3"/>
+                            <input type="file" name="Backyard4"/>
+                            <input type="file" name="Backyard5"/>
+                            <input type="submit" name="submit" value="submit" />
+                        </form>
+            </center>
+
+     </section>
+
+</body>
+</html>
