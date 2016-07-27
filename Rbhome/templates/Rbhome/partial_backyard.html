@@ -1,0 +1,143 @@
+{% load staticfiles %}
+
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="block_info">
+        <a href="#{{backyard.id}}" data-toggle="modal" data-target="#{{backyard.id}}">
+            <div class="block_data">
+                <img src="{{backyard.image_url1}}" alt="" />
+                <div class="hover_data">
+                    <div class="box_text">
+                        <h1>{{backyard.city}}, {{backyard.state}}</h1>
+                    </div>
+
+                    <div class="left_blok">
+                        <ul>
+                            <li class="blue">
+                                <h5>OTHER</h5>
+                                <span>SP KR</span>
+                            </li>
+                            <li class="green">
+                                <h5>CAPACITY</h5>
+                                <span>{{backyard.capacity}}</span>
+                            </li>
+                            <li class="orange">
+                                <h5>RENT/HR</h5>
+                                <span>{{backyard.rent}}</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bottom_block left_blok">
+                        <ul>
+                            <li class="blue">
+                                <h5>SIZE</h5>
+                                <span>{{backyard.size}}</span>
+                            </li>
+                            <li class="green">
+                                <h5>ZIP</h5>
+                                <span>{{backyard.zip}}</span>
+                            </li>
+                            <li class="orange">
+                                <h5>CITY</h5>
+                                <span style="height: 39px; padding: 6px 0;">{{backyard.city}}</span>
+                            </li>
+                            <li class="blue">
+                                <h5>STATE</h5>
+                                <span>{{backyard.state}}</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                                    	</div>
+
+                                        <div class="mb_block">
+                                            	<ul>
+                                                    	<li>
+                                                        	<h5>STATE</h5>
+                                                            <span>{{backyard.state}}</span>
+                                                        </li>
+                                                        <li>
+                                                        	<h5>CITY</h5>
+                                                            <span>{{backyard.city}}</span>
+                                                        </li>
+                                                        <li>
+                                                        	<h5>ZIP</h5>
+                                                            <span>{{backyard.zip}}</span>
+                                                        </li>
+                                                        <li>
+                                                        	<h5>SIZE</h5>
+                                                            <span>{{backyard.size}}</span>
+                                                        </li>
+                                                        <li>
+                                                        	<h5>RENT/HR</h5>
+                                                            <span>{{backyard.rent}}</span>
+                                                        </li>
+                                                        <li>
+                                                        	<h5>CAPACITY</h5>
+                                                            <span>{{backyard.capacity}}</span>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                    </a>
+                                    </div>
+                                </div>
+
+
+<!-- Modal -->
+<div class="modal fade myModal" id="{{backyard.id}}"  role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><img src="{% static 'Rbhome/images/close.png' %}" alt="" /></span></button>
+        <h4 class="modal-title" id="myModalLabel">{{backyard.user.username}} | <span>{{backyard.city}}, {{backyard.state}}</span></h4>
+      </div>
+      <div class="modal-body">
+       		<div class="slider">
+            	<ul class="bxslider">
+                    {% if backyard.image_url1 %}
+                  <li><img src="{{backyard.image_url1}}" /></li>
+                  {% endif %}
+                    {% if backyard.image_url2 %}
+                  <li><img src="{{backyard.image_url2}}" /></li>
+                  {% endif %}
+                    {% if backyard.image_url3 %}
+                  <li><img src="{{backyard.image_url3}}" /></li>
+                  {% endif %}
+                    {% if backyard.image_url4 %}
+                  <li><img src="{{backyard.image_url4}}" /></li>
+                  {% endif %}
+{% if backyard.image_url5 %}
+                  <li><img src="{{backyard.image_url5}}" /></li>
+                  {% endif %}
+                </ul>
+
+            </div>
+      </div>
+      <div class="modal-footer">
+       	<div class="pro_info">
+        	<ul>
+                <li>
+                	<span>Swimming Pool</span>
+                    <span>:No</span>
+                </li>
+                <li>
+                	<span>Kiddie Rides</span>
+                    <span>:Yes</span>
+                </li>
+                <li>
+                	<span>Canopy</span>
+                    <span>:Yes</span>
+                </li>
+                <li>
+                	<span>Barbeque Open Space</span>
+                    <span>:Yes</span>
+                </li>
+
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

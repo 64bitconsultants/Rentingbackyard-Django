@@ -100,17 +100,17 @@ body {background-color: #007eff;display: inline-block;float: left;padding: 28px;
 .bottom_block.left_blok {bottom: -63px;left: inherit;right: -64px;width: 100%;}
 .bottom_block.left_blok li {display: inline-block;float: right;}
 .filter_contant .col-md-3{ padding:0;}
-#myModal .modal-dialog{ width:800px; margin-top:10%;}
-#myModal .modal-content{ border-radius:30px; padding:25px;}
-#myModal .close{ opacity:1;}
-#myModal .modal-title {font-size: 33px; color:#007eff;}
-#myModal .modal-header {padding: 0;border-color:#007eff;}
-#myModal #myModalLabel > span {font-size: 24px;}
-#myModal .slider {display: inline-block;width: 100%;}
-#myModal .bxslider > li {margin: 0 auto !important;position: static !important;width: 435px !important;height:280px !important;}
-#myModal .bx-pager.bx-default-pager {display: none;}
-#myModal .bx-wrapper .bx-controls-direction a {height: 100px;margin-top: -16px;outline: 0 none;position: absolute;text-indent: -9999px;top: 42%;width: 45px;z-index: 9999;}
-#myModal .modal-footer {border-top: 1px solid #007eff;padding: 0px;text-align: left;}
+.myModal .modal-dialog{ width:800px; margin-top:10%;}
+.myModal .modal-content{ border-radius:30px; padding:25px;}
+.myModal .close{ opacity:1;}
+.myModal .modal-title {font-size: 33px; color:#007eff;}
+.myModal .modal-header {padding: 0;border-color:#007eff;}
+.myModal #myModalLabel > span {font-size: 24px;}
+.myModal .slider {display: inline-block;width: 100%;}
+.myModal .bxslider > li {margin: 0 auto !important;position: static !important;width: 435px !important;height:280px !important;}
+.myModal .bx-pager.bx-default-pager {display: none;}
+.myModal .bx-wrapper .bx-controls-direction a {height: 100px;margin-top: -16px;outline: 0 none;position: absolute;text-indent: -9999px;top: 42%;width: 45px;z-index: 9999;}
+.myModal .modal-footer {border-top: 1px solid #007eff;padding: 0px;text-align: left;}
 
 #login .login-dialog{ width:800px; margin-top:10%;}
 #login .login-content{ padding:12px;}
@@ -156,7 +156,7 @@ body {background-color: #007eff;display: inline-block;float: left;padding: 28px;
 .comeout{margin:0 !important;}
 .filter_btn {background-color: #f77104;border-radius: 0 8px 8px 0;padding: 0 10px;position: absolute;right: -35px;top: 50%;}
 .mb_data{ display:block;}
-#myModal .modal-dialog{ width:680px;}
+.myModal .modal-dialog{ width:680px;}
 }
 
 @media screen and (max-width:767px){
@@ -191,7 +191,7 @@ body {background-color: #007eff;display: inline-block;float: left;padding: 28px;
 .mb_block {display: inline-block;margin: 10px 0 5px;width: 100%;}
 .modal{ z-index:999999999;}
 .filter_btn{ top:30%;}
-#myModal .modal-dialog{ width:auto;}
+.myModal .modal-dialog{ width:auto;}
 .pro_info li{ font-size:15px;}
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {background-color: #007dfd;border-color: transparent;width: 275px;}
 .navbar-nav {margin: 0;}
@@ -208,12 +208,12 @@ body {background-color: #007eff;display: inline-block;float: left;padding: 28px;
 .mb_menu{ top:55px;}
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {position: relative;right: -22px;width: 100%;}
 .filter_contant{ padding:0 5px;}
-#myModal .modal-title{ font-size:24px;}
-#myModal #myModalLabel > span {font-size: 16px;}
-#myModal .modal-content{ padding:15px;}
+.myModal .modal-title{ font-size:24px;}
+.myModal #myModalLabel > span {font-size: 16px;}
+.myModal .modal-content{ padding:15px;}
 .pro_info li {font-size: 12px;}
 .close img {width: 15px;}
-#myModal .modal-content{border-radius:10px;}
+.myModal .modal-content{border-radius:10px;}
 }
 @media screen and (max-width:479px){
 body{ padding:15px;}
@@ -222,8 +222,8 @@ body{ padding:15px;}
 .menu2 li {margin: 0 5px;}
 .menu2 a {font-size: 11px;}
 .mb_block li {border-width: 1px;margin: 1px;width: 32.56%;}
-#myModal .bxslider > li {height: 155px !important;margin: 0 auto !important;position: static !important;width: auto !important;}
-#myModal .bx-wrapper .bx-controls-direction a{ height:45px; background-size:100% 100%; width:25px;}
-#myModal .modal-title {font-size: 16px;}
-#myModal #myModalLabel > span {font-size: 11px;}
+.myModal .bxslider > li {height: 155px !important;margin: 0 auto !important;position: static !important;width: auto !important;}
+.myModal .bx-wrapper .bx-controls-direction a{ height:45px; background-size:100% 100%; width:25px;}
+.myModal .modal-title {font-size: 16px;}
+.myModal #myModalLabel > span {font-size: 11px;}
 }
