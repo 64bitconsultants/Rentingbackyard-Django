@@ -135,13 +135,15 @@
                                 	<div class="search_box">
                                     	<div class="input-group">
                                           <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button"><img src="{% static 'Rbhome/images/search_icon.png' %}" alt="" /></button>
+                                            <button class="btn btn-default" onclick=" return letussearch()" type="button"><img src="{% static 'Rbhome/images/search_icon.png' %}" alt="" /></button>
                                           </span>
-                                          <input type="text" class="form-control" placeholder="Search...">
+                                          <input type="text" id= "searchbox" class="form-control" placeholder="Search...">
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+
                             <div class="row" style="margin:0;">
                                 <br>
 
@@ -182,7 +184,13 @@
        </div>
        
 </body>
-
+<script language="javascript" type="text/javascript">
+function letussearch()
+{
+    searchtext = document.getElementById("searchbox").value;
+    window.location.href = "{% url 'index' %}"+searchtext;
+}
+</script>
 <script>
     $('.bxslider').bxSlider({
 		adaptiveHeight: true,

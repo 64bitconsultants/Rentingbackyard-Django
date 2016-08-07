@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,HttpResponse
 from forms import Userform,UserProfileform, Backyardform
 from django.views.decorators.csrf import csrf_exempt
 from django.template.context import RequestContext
@@ -15,14 +15,29 @@ cloudinary.config(
   api_secret = "pKq2pXgl6U41Vmlbttpy-pOXplc"
 )
 
+
 def index(request):
     Backyards = BackyardModel.objects.all()
-    return render(request,'Rbhome/index.html', {'Backyards':Backyards})
+    return render(request, 'Rbhome/index.html', {'Backyards':Backyards})
+
+
+def searchview(request, searchtext):
+    if searchtext=="":
+        Backyards = BackyardModel.objects.all()
+        return render(request, 'Rbhome/index.html', {'Backyards':Backyards})
+    else:
+        Backyards = list()
+        Backyards.extend(BackyardModel.objects.filter(zip = searchtext))
+        Backyards.extend(BackyardModel.objects.filter(state=searchtext))
+        Backyards.extend(BackyardModel.objects.filter(city=searchtext))
+        return render(request, 'Rbhome/index.html', {'Backyards': Backyards})
+
 
 @csrf_exempt
 def logoutview(request):
     logout(request)
     return redirect(index)
+
 
 @csrf_exempt
 def loginview(request):
@@ -37,6 +52,7 @@ def loginview(request):
         else:
             return redirect(signupview)
     return render(request, 'Rbhome/login.html', context)
+
 
 @csrf_exempt
 def signupview(request):
@@ -63,6 +79,7 @@ def signupview(request):
         UserForm = Userform()
         UserProfileForm = UserProfileform()
         return render(request,'Rbhome/signup.html', {'UserForm': UserForm, 'UserProfileForm': UserProfileForm},context)
+
 
 @csrf_exempt
 def proposalview(request):

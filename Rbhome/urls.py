@@ -8,5 +8,5 @@ urlpatterns = [
     url(r'^signup/$', views.signupview, name='signup'),
     url(r'^logout/$', views.logoutview, name='logout'),
     url(r'^proposal/$', views.proposalview, name='proposal'),
-
+    url(r'^(?P<searchtext>\w+)/$', views.searchview, name='search'),
 ]
