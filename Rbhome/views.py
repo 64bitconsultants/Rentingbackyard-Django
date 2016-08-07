@@ -27,9 +27,9 @@ def searchview(request, searchtext):
         return render(request, 'Rbhome/index.html', {'Backyards':Backyards})
     else:
         Backyards = list()
-        Backyards.extend(BackyardModel.objects.filter(zip = searchtext))
-        Backyards.extend(BackyardModel.objects.filter(state=searchtext))
-        Backyards.extend(BackyardModel.objects.filter(city=searchtext))
+        Backyards.extend(BackyardModel.objects.filter(zip__icontains = searchtext))
+        Backyards.extend(BackyardModel.objects.filter(state__icontains = searchtext))
+        Backyards.extend(BackyardModel.objects.filter(city__icontains = searchtext))
         return render(request, 'Rbhome/index.html', {'Backyards': Backyards})
 
 
